@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UserBrowser</string>
+    <string name="list_load_error">При загрузке списка возникла ошибка, проверьте сеть и попробуйте обновить список</string>
 </resources>
