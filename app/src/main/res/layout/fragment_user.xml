@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/viewPagerUserImages"
+            android:id="@+id/imageViewUserImage"
             android:layout_width="@dimen/user_image_view_height"
             android:layout_height="@dimen/user_image_view_height"
             android:layout_marginTop="@dimen/user_image_margin"
@@ -18,11 +18,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/textViewUserTitle"/>
+            app:layout_constraintBottom_toTopOf="@id/textViewUserName"/>
 
         <TextView
             style="@style/userFragmentMainText"
-            android:id="@+id/textViewUserTitle"
+            android:id="@+id/textViewUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -31,7 +31,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textViewUserAge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewPagerUserImages"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewUserImage"
             tools:text="Баба Нюра" />
 
         <TextView
@@ -46,7 +46,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textViewUserEmailTitle"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserAge"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
 
         <TextView
             style="@style/userFragmentText"
@@ -73,7 +73,7 @@
             android:textAppearance="?attr/textAppearanceTitleSmall"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserDiscountPercentageTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserTelephoneNumber"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserEmail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewUserAge" />
@@ -95,7 +95,7 @@
 
         <TextView
             style="@style/userFragmentTitles"
-            android:id="@+id/textViewUserDiscountPercentageTitle"
+            android:id="@+id/textViewUserTelephoneNumberTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -104,22 +104,22 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintVertical_bias="0.5"
             app:layout_constraintBottom_toTopOf="@+id/textViewUserNationalityTitle"
-            app:layout_constraintEnd_toStartOf="@+id/textViewUserDiscountPercentage"
+            app:layout_constraintEnd_toStartOf="@+id/textViewUserTelephoneNumber"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewUserEmail" />
 
         <TextView
             style="@style/userFragmentText"
-            android:id="@+id/textViewUserDiscountPercentage"
+            android:id="@+id/textViewUserTelephoneNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserDiscountPercentageTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserTelephoneNumberTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewUserDiscountPercentageTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserDiscountPercentageTitle"
+            app:layout_constraintStart_toEndOf="@+id/textViewUserTelephoneNumberTitle"
+            app:layout_constraintTop_toTopOf="@+id/textViewUserTelephoneNumberTitle"
             tools:text="(272) 790-0888" />
 
         <TextView
@@ -135,7 +135,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textViewUserGenderTitle"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserNationality"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserDiscountPercentage" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserTelephoneNumber" />
 
         <TextView
             style="@style/userFragmentText"

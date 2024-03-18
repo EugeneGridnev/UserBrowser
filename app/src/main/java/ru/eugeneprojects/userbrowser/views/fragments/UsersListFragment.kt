@@ -9,9 +9,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import ru.eugeneprojects.userbrowser.R
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
 import ru.eugeneprojects.userbrowser.databinding.FragmentUsersListBinding
 import ru.eugeneprojects.userbrowser.repository.network.UsersRepositoryIMPL
@@ -62,6 +64,21 @@ class UsersListFragment : Fragment(){
         binding?.recyclerViewUsers?.apply {
             adapter = usersPagingAdapter
             layoutManager = LinearLayoutManager(activity)
+        }
+
+        setOnUserClick()
+    }
+
+    private fun setOnUserClick() {
+
+        usersPagingAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putParcelable("user", it)
+            }
+            findNavController().navigate(
+                R.id.action_usersListFragment_to_userFragment,
+                bundle
+            )
         }
     }
 }
