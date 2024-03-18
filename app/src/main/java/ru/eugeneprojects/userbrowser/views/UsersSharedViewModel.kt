@@ -9,9 +9,9 @@ import androidx.paging.cachedIn
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
-import ru.eugeneprojects.userbrowser.models.Result
-import ru.eugeneprojects.userbrowser.repository.network.UsersRepository
-import ru.eugeneprojects.userbrowser.repository.paging.UserPagingSource
+import ru.eugeneprojects.userbrowser.data.models.Result
+import ru.eugeneprojects.userbrowser.data.repository.network.UsersRepository
+import ru.eugeneprojects.userbrowser.data.repository.paging.UserPagingSource
 import ru.eugeneprojects.userbrowser.util.Constants
 
 class UsersSharedViewModel(private val usersRepository: UsersRepository) : ViewModel() {

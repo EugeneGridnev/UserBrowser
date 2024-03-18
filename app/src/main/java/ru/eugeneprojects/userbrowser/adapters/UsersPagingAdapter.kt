@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import ru.eugeneprojects.userbrowser.R
 import ru.eugeneprojects.userbrowser.databinding.ItemUserLayoutBinding
-import ru.eugeneprojects.userbrowser.models.Result
+import ru.eugeneprojects.userbrowser.data.models.Result
 
 class UsersPagingAdapter :
     PagingDataAdapter<Result, UsersPagingAdapter.ProductViewHolder>(UserDiffCallBack()) {

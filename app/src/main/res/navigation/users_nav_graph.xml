@@ -20,6 +20,6 @@
         android:label="UserFragment" >
         <argument
             android:name="user"
-            app:argType="ru.eugeneprojects.userbrowser.models.Result" />
+            app:argType="ru.eugeneprojects.userbrowser.data.models.Result" />
     </fragment>
 </navigation>

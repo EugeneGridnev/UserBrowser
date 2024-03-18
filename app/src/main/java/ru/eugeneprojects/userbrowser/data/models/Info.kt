@@ -1,4 +1,4 @@
-package ru.eugeneprojects.userbrowser.models
+package ru.eugeneprojects.userbrowser.data.models
 
 data class Info(
     val page: Int,
