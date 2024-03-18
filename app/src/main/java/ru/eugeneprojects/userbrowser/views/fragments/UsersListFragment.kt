@@ -5,16 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.eugeneprojects.userbrowser.R
+import ru.eugeneprojects.userbrowser.adapters.UsersLoadStateAdapter
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
 import ru.eugeneprojects.userbrowser.data.repository.connection.ConnectivityRepositoryIMPL
 import ru.eugeneprojects.userbrowser.databinding.FragmentUsersListBinding
@@ -45,7 +48,7 @@ class UsersListFragment : Fragment(){
 
         viewModel = ViewModelProvider(this, viewModelProviderFactory)[UsersSharedViewModel::class.java]
 
-        setUpRecyclerView()
+        setUpUserList()
         observeUsers(usersPagingAdapter)
 
         viewModel.isOnline.observe(viewLifecycleOwner) { isOnline ->
@@ -70,14 +73,27 @@ class UsersListFragment : Fragment(){
         }
     }
 
-    private fun setUpRecyclerView() {
+    private fun setUpUserList() {
         usersPagingAdapter = UsersPagingAdapter()
-        binding?.recyclerViewUsers?.apply {
-            adapter = usersPagingAdapter
-            layoutManager = LinearLayoutManager(activity)
-        }
+
+        binding?.recyclerViewUsers?.layoutManager = LinearLayoutManager(activity)
+        binding?.recyclerViewUsers?.adapter = usersPagingAdapter.withLoadStateFooter(UsersLoadStateAdapter())
 
         setOnUserClick()
+
+        usersPagingAdapter.addLoadStateListener { combinedLoadStates ->
+            val refreshState = combinedLoadStates.refresh
+            binding?.recyclerViewUsers?.isVisible = refreshState != LoadState.Loading
+            binding?.progressBar?.isVisible = refreshState == LoadState.Loading
+
+            if (refreshState is LoadState.Error) {
+                Toast.makeText(
+                    activity,
+                    resources.getString(R.string.toast_load_error_message),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     private fun setOnUserClick() {
