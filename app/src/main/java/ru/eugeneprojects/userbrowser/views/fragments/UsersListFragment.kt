@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
-import ru.eugeneprojects.userbrowser.databinding.UsersListFragmentBinding
+import ru.eugeneprojects.userbrowser.databinding.FragmentUsersListBinding
 import ru.eugeneprojects.userbrowser.repository.network.UsersRepositoryIMPL
 import ru.eugeneprojects.userbrowser.views.UsersSharedViewModel
 import ru.eugeneprojects.userbrowser.views.UsersViewModelProviderFactory
 
 class UsersListFragment : Fragment(){
 
-    private var binding: UsersListFragmentBinding? = null
+    private var binding: FragmentUsersListBinding? = null
     private lateinit var usersPagingAdapter: UsersPagingAdapter
     private lateinit var viewModel: UsersSharedViewModel
 
@@ -28,7 +28,7 @@ class UsersListFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = UsersListFragmentBinding.inflate(inflater)
+        binding = FragmentUsersListBinding.inflate(inflater)
         return binding!!.root
     }
 

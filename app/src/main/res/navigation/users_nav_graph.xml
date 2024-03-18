@@ -9,5 +9,5 @@
         android:id="@+id/usersListFragment"
         android:name="ru.eugeneprojects.userbrowser.views.fragments.UsersListFragment"
         android:label="users_list_fragment"
-        tools:layout="@layout/users_list_fragment" />
+        tools:layout="@layout/fragment_users_list" />
 </navigation>
