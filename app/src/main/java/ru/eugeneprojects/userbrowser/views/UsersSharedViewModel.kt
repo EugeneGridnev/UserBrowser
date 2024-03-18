@@ -11,9 +11,9 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import ru.eugeneprojects.userbrowser.data.models.Result
-import ru.eugeneprojects.userbrowser.data.repository.connection.ConnectivityRepository
-import ru.eugeneprojects.userbrowser.data.repository.network.UsersRepository
-import ru.eugeneprojects.userbrowser.data.repository.paging.UserPagingSource
+import ru.eugeneprojects.userbrowser.data.network.connection.ConnectivityRepository
+import ru.eugeneprojects.userbrowser.data.network.repository.UsersRepository
+import ru.eugeneprojects.userbrowser.data.paging.UserPagingSource
 import ru.eugeneprojects.userbrowser.util.Constants
 
 class UsersSharedViewModel(

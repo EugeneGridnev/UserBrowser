@@ -19,9 +19,9 @@ import kotlinx.coroutines.launch
 import ru.eugeneprojects.userbrowser.R
 import ru.eugeneprojects.userbrowser.adapters.UsersLoadStateAdapter
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
-import ru.eugeneprojects.userbrowser.data.repository.connection.ConnectivityRepositoryIMPL
+import ru.eugeneprojects.userbrowser.data.network.connection.ConnectivityRepositoryIMPL
 import ru.eugeneprojects.userbrowser.databinding.FragmentUsersListBinding
-import ru.eugeneprojects.userbrowser.data.repository.network.UsersRepositoryIMPL
+import ru.eugeneprojects.userbrowser.data.network.repository.UsersRepositoryIMPL
 import ru.eugeneprojects.userbrowser.views.UsersSharedViewModel
 import ru.eugeneprojects.userbrowser.views.UsersViewModelProviderFactory
 

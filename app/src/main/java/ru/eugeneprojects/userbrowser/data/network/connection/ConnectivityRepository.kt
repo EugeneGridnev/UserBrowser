@@ -1,4 +1,4 @@
-package ru.eugeneprojects.userbrowser.data.repository.connection
+package ru.eugeneprojects.userbrowser.data.network.connection
 
 import kotlinx.coroutines.flow.Flow
 

@@ -1,4 +1,4 @@
-package ru.eugeneprojects.userbrowser.data.repository.connection
+package ru.eugeneprojects.userbrowser.data.network.connection
 
 import android.content.Context
 import android.net.ConnectivityManager

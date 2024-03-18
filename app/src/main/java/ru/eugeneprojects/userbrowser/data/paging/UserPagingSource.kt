@@ -1,10 +1,10 @@
-package ru.eugeneprojects.userbrowser.data.repository.paging
+package ru.eugeneprojects.userbrowser.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import retrofit2.HttpException
 import ru.eugeneprojects.userbrowser.data.models.Result
-import ru.eugeneprojects.userbrowser.data.repository.network.UsersRepository
+import ru.eugeneprojects.userbrowser.data.network.repository.UsersRepository
 
 class UserPagingSource (
     val userRepository: UsersRepository
@@ -25,6 +25,7 @@ class UserPagingSource (
             if (response.isSuccessful) {
                 val users = checkNotNull(response.body()).results.map { user ->
                     Result(
+                        0,
                         user.cell,
                         user.dob,
                         user.email,
