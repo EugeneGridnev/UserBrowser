@@ -4,8 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import retrofit2.HttpException
 import ru.eugeneprojects.userbrowser.models.Result
-import ru.eugeneprojects.userbrowser.repository.UsersRepository
-import ru.eugeneprojects.userbrowser.util.Constants
+import ru.eugeneprojects.userbrowser.repository.network.UsersRepository
 
 class UserPagingSource (
     val userRepository: UsersRepository

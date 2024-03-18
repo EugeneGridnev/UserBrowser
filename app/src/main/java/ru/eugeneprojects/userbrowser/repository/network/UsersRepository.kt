@@ -1,4 +1,4 @@
-package ru.eugeneprojects.userbrowser.repository
+package ru.eugeneprojects.userbrowser.repository.network
 
 import retrofit2.Response
 import ru.eugeneprojects.userbrowser.models.Result

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import ru.eugeneprojects.userbrowser.models.Result
-import ru.eugeneprojects.userbrowser.repository.UsersRepository
+import ru.eugeneprojects.userbrowser.repository.network.UsersRepository
 import ru.eugeneprojects.userbrowser.repository.paging.UserPagingSource
 import ru.eugeneprojects.userbrowser.util.Constants
 

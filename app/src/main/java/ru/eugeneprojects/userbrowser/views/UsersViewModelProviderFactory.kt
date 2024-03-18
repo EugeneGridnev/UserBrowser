@@ -2,7 +2,7 @@ package ru.eugeneprojects.userbrowser.views
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ru.eugeneprojects.userbrowser.repository.UsersRepository
+import ru.eugeneprojects.userbrowser.repository.network.UsersRepository
 
 class UsersViewModelProviderFactory(
     private val productsRepository: UsersRepository

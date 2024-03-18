@@ -1,4 +1,4 @@
-package ru.eugeneprojects.userbrowser.views
+package ru.eugeneprojects.userbrowser.views.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,8 +14,9 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
 import ru.eugeneprojects.userbrowser.databinding.UsersListFragmentBinding
-import ru.eugeneprojects.userbrowser.repository.UsersRepository
-import ru.eugeneprojects.userbrowser.repository.UsersRepositoryIMPL
+import ru.eugeneprojects.userbrowser.repository.network.UsersRepositoryIMPL
+import ru.eugeneprojects.userbrowser.views.UsersSharedViewModel
+import ru.eugeneprojects.userbrowser.views.UsersViewModelProviderFactory
 
 class UsersListFragment : Fragment(){
 

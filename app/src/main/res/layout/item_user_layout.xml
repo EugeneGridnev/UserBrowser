@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceTitleLarge"
             app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserTelephoneNumber"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/itemViewUserImage"
             app:layout_constraintTop_toTopOf="parent"
@@ -41,7 +41,7 @@
 
         <TextView
             style="@style/cardTextViewStyle"
-            android:id="@+id/textViewUserTelephoneNumber"
+            android:id="@+id/textViewUserEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="3"

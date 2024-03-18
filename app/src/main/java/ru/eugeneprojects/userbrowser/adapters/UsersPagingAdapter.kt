@@ -39,14 +39,14 @@ class UsersPagingAdapter :
 
         fun bind(result: Result, onClickListener: ((Result) -> Unit)? = null) {
 
-            val name = result.name.first + result.name.last
+            val name = result.name.first + " " + result.name.last
 
             Glide.with(itemView)
                 .load(result.picture.large)
                 .placeholder(R.drawable.ic_image_placeholder)
                 .into(binding.itemViewUserImage)
             binding.textViewUserName.text = name
-            binding.textViewUserTelephoneNumber.text = result.phone
+            binding.textViewUserEmail.text = result.email
             itemView.setOnClickListener {
                 onClickListener?.invoke(result)
             }
