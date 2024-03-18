@@ -16,4 +16,21 @@
         <item name="android:layout_marginStart">@dimen/card_text_view_style_margin</item>
         <item name="android:layout_marginEnd">@dimen/card_text_view_style_margin</item>
     </style>
+
+    <style name="userFragmentMainText">
+        <item name="android:layout_marginTop">@dimen/user_fragment_main_text_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/user_fragment_main_text_margin_bottom</item>
+        <item name="android:layout_marginStart">@dimen/user_fragment_main_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_main_text_margin_end</item>
+    </style>
+
+    <style name="userFragmentText" parent="userFragmentMainText">
+        <item name="android:layout_marginStart">@dimen/user_fragment_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_text_margin_end</item>
+    </style>
+
+    <style name="userFragmentTitles" parent="userFragmentText">
+        <item name="android:layout_marginStart">@dimen/user_fragment_titles_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_titles_margin_end</item>
+    </style>
 </resources>

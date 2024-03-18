@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">UserBrowser</string>
     <string name="list_load_error">При загрузке списка возникла ошибка, проверьте сеть и попробуйте обновить список</string>
+    <string name="user_age">Возраст:</string>
+    <string name="user_email">Email:</string>
+    <string name="user_phone_number">Номер телефона:</string>
+    <string name="user_nationality">Национальность:</string>
+    <string name="user_gender">Пол:</string>
+    <string name="user_id">ID:</string>
+    <string name="user_coordinates">Координаты:</string>
 </resources>

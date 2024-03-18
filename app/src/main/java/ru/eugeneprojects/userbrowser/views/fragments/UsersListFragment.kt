@@ -44,6 +44,11 @@ class UsersListFragment : Fragment(){
         observeProducts(usersPagingAdapter)
     }
 
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
+    }
+
     private fun observeProducts(adapter: UsersPagingAdapter) {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
