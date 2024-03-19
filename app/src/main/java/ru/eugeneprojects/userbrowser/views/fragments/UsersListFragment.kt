@@ -14,17 +14,16 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.eugeneprojects.userbrowser.R
 import ru.eugeneprojects.userbrowser.adapters.UsersLoadStateAdapter
 import ru.eugeneprojects.userbrowser.adapters.UsersPagingAdapter
-import ru.eugeneprojects.userbrowser.data.network.connection.ConnectivityRepositoryIMPL
 import ru.eugeneprojects.userbrowser.databinding.FragmentUsersListBinding
-import ru.eugeneprojects.userbrowser.data.network.repository.UsersRepositoryIMPL
 import ru.eugeneprojects.userbrowser.views.UsersSharedViewModel
-import ru.eugeneprojects.userbrowser.views.UsersViewModelProviderFactory
 
+@AndroidEntryPoint
 class UsersListFragment : Fragment(){
 
     private var binding: FragmentUsersListBinding? = null
@@ -42,11 +41,7 @@ class UsersListFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val usersRepository = UsersRepositoryIMPL()
-        val connectivityRepository = ConnectivityRepositoryIMPL(requireContext())
-        val viewModelProviderFactory = UsersViewModelProviderFactory(usersRepository, connectivityRepository)
-
-        viewModel = ViewModelProvider(this, viewModelProviderFactory)[UsersSharedViewModel::class.java]
+        viewModel = ViewModelProvider(this)[UsersSharedViewModel::class.java]
 
         setUpUserList()
         observeUsers(usersPagingAdapter)

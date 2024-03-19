@@ -1,7 +1,8 @@
 package ru.eugeneprojects.userbrowser.data.network.repository
 
-import ru.eugeneprojects.userbrowser.api.RetrofitInstance
+import ru.eugeneprojects.userbrowser.api.UserAPI
+import javax.inject.Inject
 
-class UsersRepositoryIMPL() : UsersRepository {
-    override suspend fun getRandomUser() = RetrofitInstance.api.getUsers()
+class UsersRepositoryIMPL @Inject constructor(private val api: UserAPI) : UsersRepository {
+    override suspend fun getRandomUser() = api.getUsers()
 }

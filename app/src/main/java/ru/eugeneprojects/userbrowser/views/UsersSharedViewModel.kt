@@ -7,6 +7,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -15,8 +16,10 @@ import ru.eugeneprojects.userbrowser.data.network.connection.ConnectivityReposit
 import ru.eugeneprojects.userbrowser.data.network.repository.UsersRepository
 import ru.eugeneprojects.userbrowser.data.paging.UserPagingSource
 import ru.eugeneprojects.userbrowser.util.Constants
+import javax.inject.Inject
 
-class UsersSharedViewModel(
+@HiltViewModel
+class UsersSharedViewModel @Inject constructor(
     private val usersRepository: UsersRepository,
     private val connectivityRepository: ConnectivityRepository
 ) : ViewModel() {

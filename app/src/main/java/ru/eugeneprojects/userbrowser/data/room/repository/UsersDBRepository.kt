@@ -8,5 +8,5 @@ interface UsersDBRepository {
     suspend fun insert(users: List<Result>)
 
     //TODO возможно тут просто лист
-    suspend fun getUsers(): PagingSource<Int, Result>
+    fun getUsers(): PagingSource<Int, Result>
 }

@@ -10,8 +10,8 @@ import ru.eugeneprojects.userbrowser.data.models.Result
 @Dao
 interface UsersDao {
     @Insert(onConflict = REPLACE)
-    suspend fun saveUsers(users: List<Result>): Long
+    suspend fun saveUsers(users: List<Result>)
 
     @Query("SELECT * FROM table_user")
-    suspend fun getUsers(): PagingSource<Int, Result>
+    fun getUsers(): PagingSource<Int, Result>
 }
