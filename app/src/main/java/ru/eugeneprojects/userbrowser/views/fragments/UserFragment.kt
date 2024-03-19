@@ -54,7 +54,7 @@ class UserFragment : Fragment(){
         binding?.textViewUserTelephoneNumber?.text = user.phone
         binding?.textViewUserNationality?.text = user.nat
         binding?.textViewUserGender?.text = user.gender
-        binding?.textViewUserID?.text = user.id.name + " " + user.id.value
+        binding?.textViewUserID?.text = user.id.name + " " + (user.id.value ?: "")
         binding?.textViewUserCoordinates?.text =
             user.location.coordinates.latitude + " " + user.location.coordinates.longitude
 

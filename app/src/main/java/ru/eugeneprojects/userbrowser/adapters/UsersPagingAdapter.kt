@@ -6,15 +6,14 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import ru.eugeneprojects.userbrowser.R
 import ru.eugeneprojects.userbrowser.databinding.ItemUserLayoutBinding
-import ru.eugeneprojects.userbrowser.data.models.Result
+import ru.eugeneprojects.userbrowser.data.models.User
 
 class UsersPagingAdapter :
-    PagingDataAdapter<Result, UsersPagingAdapter.ProductViewHolder>(UserDiffCallBack()) {
+    PagingDataAdapter<User, UsersPagingAdapter.ProductViewHolder>(UserDiffCallBack()) {
 
-    private var onItemClickListener: ((Result) -> Unit)? = null
+    private var onItemClickListener: ((User) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
 
@@ -37,33 +36,33 @@ class UsersPagingAdapter :
     class ProductViewHolder(val binding: ItemUserLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(result: Result, onClickListener: ((Result) -> Unit)? = null) {
+        fun bind(user: User, onClickListener: ((User) -> Unit)? = null) {
 
-            val name = result.name.first + " " + result.name.last
+            val name = user.name.first + " " + user.name.last
 
             Glide.with(itemView)
-                .load(result.picture.large)
+                .load(user.picture.large)
                 .placeholder(R.drawable.ic_image_placeholder)
                 .into(binding.itemViewUserImage)
             binding.textViewUserName.text = name
-            binding.textViewUserEmail.text = result.email
+            binding.textViewUserEmail.text = user.email
             itemView.setOnClickListener {
-                onClickListener?.invoke(result)
+                onClickListener?.invoke(user)
             }
         }
     }
 
-    class UserDiffCallBack : DiffUtil.ItemCallback<Result>() {
-        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+    class UserDiffCallBack : DiffUtil.ItemCallback<User>() {
+        override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem == newItem
         }
     }
 
-    fun setOnItemClickListener(listener: (Result) -> Unit) {
+    fun setOnItemClickListener(listener: (User) -> Unit) {
         onItemClickListener = listener
     }
 }

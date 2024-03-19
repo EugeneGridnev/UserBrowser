@@ -1,6 +1,6 @@
 package ru.eugeneprojects.userbrowser.data.models
 
-data class Users(
+data class UsersResponse(
     val info: Info,
-    val results: List<Result>
+    val results: List<User>
 )
