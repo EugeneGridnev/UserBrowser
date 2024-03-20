@@ -98,7 +98,7 @@ class UserFragment : Fragment(){
         }
 
         binding?.textViewUserTelephoneNumber?.setOnClickListener {
-            openInMailClient(user.phone)
+            openInPhone(user.phone)
         }
 
         binding?.textViewUserCellNumber?.setOnClickListener {
