@@ -13,8 +13,10 @@
     </style>
 
     <style name="cardTextViewStyle">
-        <item name="android:layout_marginStart">@dimen/card_text_view_style_margin</item>
-        <item name="android:layout_marginEnd">@dimen/card_text_view_style_margin</item>
+        <item name="android:layout_marginTop">@dimen/card_text_view_style_between_margin</item>
+        <item name="android:layout_marginBottom">@dimen/card_text_view_style_between_margin</item>
+        <item name="android:layout_marginStart">@dimen/card_text_view_style_side_margin</item>
+        <item name="android:layout_marginEnd">@dimen/card_text_view_style_side_margin</item>
     </style>
 
     <style name="userFragmentMainText">

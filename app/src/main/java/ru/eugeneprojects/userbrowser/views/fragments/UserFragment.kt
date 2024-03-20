@@ -48,15 +48,21 @@ class UserFragment : Fragment(){
                 .into(it)
         }
 
-        binding?.textViewUserName?.text = user.name.first + " " + user.name.last
+        binding?.textViewUserName?.text = user.name.title + " " + user.name.first + " " + user.name.last
         binding?.textViewUserAge?.text = user.dob.age.toString()
+        binding?.textViewUserDOB?.text = user.dob.date
+        binding?.textViewUserRegistrationDate?.text = user.registered.date
         binding?.textViewUserEmail?.text = user.email
+        binding?.textViewUserUserName?.text = user.login.username
+        binding?.textViewUserUserPassword?.text = user.login.password
         binding?.textViewUserTelephoneNumber?.text = user.phone
+        binding?.textViewUserCellNumber?.text = user.cell
         binding?.textViewUserNationality?.text = user.nat
         binding?.textViewUserGender?.text = user.gender
         binding?.textViewUserID?.text = user.id.name + " " + (user.id.value ?: "")
-        binding?.textViewUserCoordinates?.text =
-            user.location.coordinates.latitude + " " + user.location.coordinates.longitude
+        binding?.textViewUserAddress?.text = user.location.street.number.toString() + " " + user.location.street.name +
+                user.location.city + " " + user.location.state + " " + user.location.country
+        binding?.textViewUserTimeZone?.text = user.location.timezone.offset + " " + user.location.timezone.description
 
     }
 }

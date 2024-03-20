@@ -33,19 +33,22 @@ class UsersPagingAdapter :
     }
 
 
-    class ProductViewHolder(val binding: ItemUserLayoutBinding) :
+    class ProductViewHolder(private val binding: ItemUserLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: User, onClickListener: ((User) -> Unit)? = null) {
 
             val name = user.name.first + " " + user.name.last
+            val address = user.location.street.number.toString() + " " + user.location.street.name +
+                    user.location.city + " " + user.location.state + " " + user.location.country
 
             Glide.with(itemView)
                 .load(user.picture.large)
                 .placeholder(R.drawable.ic_image_placeholder)
-                .into(binding.itemViewUserImage)
-            binding.textViewUserName.text = name
-            binding.textViewUserEmail.text = user.email
+                .into(binding.itemViewItemUserImage)
+            binding.textViewItemUserName.text = name
+            binding.textViewItemUserAddress.text = address
+            binding.textViewUserItemTelephoneNumber.text = user.cell
             itemView.setOnClickListener {
                 onClickListener?.invoke(user)
             }
