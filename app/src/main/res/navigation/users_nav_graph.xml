@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/users_nav_graph"
+    app:startDestination="@id/usersListFragment">
+
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="ru.eugeneprojects.userbrowser.views.fragments.UsersListFragment"
+        android:label="users_list_fragment"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_usersListFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="ru.eugeneprojects.userbrowser.views.fragments.UserFragment"
+        android:label="UserFragment" >
+        <argument
+            android:name="user"
+            app:argType="ru.eugeneprojects.userbrowser.data.models.User" />
+    </fragment>
+</navigation>

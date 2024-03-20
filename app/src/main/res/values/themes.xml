@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.UserBrowser" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -6,4 +6,33 @@
     </style>
 
     <style name="Theme.UserBrowser" parent="Base.Theme.UserBrowser" />
+
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/card_corner_size</item>
+    </style>
+
+    <style name="cardTextViewStyle">
+        <item name="android:layout_marginTop">@dimen/card_text_view_style_between_margin</item>
+        <item name="android:layout_marginBottom">@dimen/card_text_view_style_between_margin</item>
+        <item name="android:layout_marginStart">@dimen/card_text_view_style_side_margin</item>
+        <item name="android:layout_marginEnd">@dimen/card_text_view_style_side_margin</item>
+    </style>
+
+    <style name="userFragmentMainText">
+        <item name="android:layout_marginTop">@dimen/user_fragment_main_text_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/user_fragment_main_text_margin_bottom</item>
+        <item name="android:layout_marginStart">@dimen/user_fragment_main_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_main_text_margin_end</item>
+    </style>
+
+    <style name="userFragmentText" parent="userFragmentMainText">
+        <item name="android:layout_marginStart">@dimen/user_fragment_text_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_text_margin_end</item>
+    </style>
+
+    <style name="userFragmentTitles" parent="userFragmentText">
+        <item name="android:layout_marginStart">@dimen/user_fragment_titles_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/user_fragment_titles_margin_end</item>
+    </style>
 </resources>

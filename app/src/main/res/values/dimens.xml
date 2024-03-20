@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_margin">4dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="card_padding">10dp</dimen>
+    <dimen name="card_image_width">75dp</dimen>
+    <dimen name="card_image_height">75dp</dimen>
+    <dimen name="card_corner_size">5dp</dimen>
+
+    <dimen name="card_text_view_style_side_margin">10dp</dimen>
+    <dimen name="card_text_view_style_between_margin">2dp</dimen>
+
+    <dimen name="progress_padding">4dp</dimen>
+    <dimen name="progress_height">56dp</dimen>
+
+    <dimen name="error_min_height">56dp</dimen>
+    <dimen name="error_padding">4dp</dimen>
+
+    <dimen name="user_image_margin">5dp</dimen>
+
+    <dimen name="user_image_view_height">200dp</dimen>
+    <dimen name="user_image_view_width">200dp</dimen>
+
+    <dimen name="user_fragment_main_text_margin_top">3dp</dimen>
+    <dimen name="user_fragment_main_text_margin_bottom">3dp</dimen>
+    <dimen name="user_fragment_main_text_margin_start">32dp</dimen>
+    <dimen name="user_fragment_main_text_margin_end">32dp</dimen>
+
+    <dimen name="user_fragment_titles_margin_start">32dp</dimen>
+    <dimen name="user_fragment_titles_margin_end">5dp</dimen>
+
+    <dimen name="user_fragment_text_margin_start">0dp</dimen>
+    <dimen name="user_fragment_text_margin_end">32dp</dimen>
+
+</resources>
