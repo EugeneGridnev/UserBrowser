@@ -293,7 +293,7 @@
             android:text="@string/user_id"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserCoordinatesTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserAddressTitle"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserID"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewUserGender" />
@@ -312,13 +312,13 @@
 
         <TextView
             style="@style/userFragmentTitles"
-            android:id="@+id/textViewUserCoordinatesTitle"
+            android:id="@+id/textViewUserAddressTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_address"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserTimeZoneTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserCoordinatesTitle"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserAddress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewUserID" />
@@ -330,10 +330,35 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewUserAddressTitle"
+            app:layout_constraintTop_toTopOf="@+id/textViewUserAddressTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserAddressTitle"
+            tools:text="8929 Valwood Pkwy Billings Michigan United States" />
+
+        <TextView
+            style="@style/userFragmentTitles"
+            android:id="@+id/textViewUserCoordinatesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_coordinates"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserTimeZoneTitle"
+            app:layout_constraintEnd_toStartOf="@+id/textViewUserCoordinates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserAddress" />
+
+        <TextView
+            style="@style/userFragmentText"
+            android:id="@+id/textViewUserCoordinates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserCoordinatesTitle"
             app:layout_constraintTop_toTopOf="@+id/textViewUserCoordinatesTitle"
             app:layout_constraintBottom_toBottomOf="@+id/textViewUserCoordinatesTitle"
-            tools:text="8929 Valwood Pkwy Billings Michigan United States" />
+            tools:text="-69.8246 134.8719" />
 
         <TextView
             style="@style/userFragmentTitles"
@@ -346,7 +371,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserTimeZone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserCoordinates" />
 
         <TextView
             style="@style/userFragmentText"
