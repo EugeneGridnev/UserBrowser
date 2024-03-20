@@ -10,7 +10,7 @@ import ru.eugeneprojects.userbrowser.data.models.User
     version = 1,
     entities = [ User::class ]
 )
-//@TypeConverters(Converters::class)
+@TypeConverters(Converters::class)
 abstract class UsersDatabase : RoomDatabase() {
 
     abstract fun getUsersDao(): UsersDao
