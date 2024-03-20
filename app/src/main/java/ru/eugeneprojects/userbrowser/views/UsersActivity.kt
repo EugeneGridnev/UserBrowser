@@ -1,7 +1,7 @@
 package ru.eugeneprojects.userbrowser.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import ru.eugeneprojects.userbrowser.R
 

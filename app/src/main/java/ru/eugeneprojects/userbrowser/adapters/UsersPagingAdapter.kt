@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.eugeneprojects.userbrowser.R
-import ru.eugeneprojects.userbrowser.databinding.ItemUserLayoutBinding
 import ru.eugeneprojects.userbrowser.data.models.User
+import ru.eugeneprojects.userbrowser.databinding.ItemUserLayoutBinding
 
 class UsersPagingAdapter :
     PagingDataAdapter<User, UsersPagingAdapter.ProductViewHolder>(UserDiffCallBack()) {
@@ -38,9 +38,10 @@ class UsersPagingAdapter :
 
         fun bind(user: User, onClickListener: ((User) -> Unit)? = null) {
 
-            val name = user.userId.toString() + " " + user.name.first + " " + user.name.last
-            val address = user.location.street.number.toString() + " " + user.location.street.name +
-                    user.location.city + " " + user.location.state + " " + user.location.country
+            val name = "${user.name.first} ${user.name.last}"
+            val address =
+                "${user.location.street.number} ${user.location.street.name} " +
+                        "${user.location.city} ${user.location.state} ${user.location.country}"
 
             Glide.with(itemView)
                 .load(user.picture.large)
