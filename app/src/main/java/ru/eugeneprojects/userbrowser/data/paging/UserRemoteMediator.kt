@@ -16,35 +16,34 @@ class UserRemoteMediator (
     private val usersDBRepository: UsersDBRepository
 ) : RemoteMediator<Int, User>() {
 
+    override suspend fun initialize(): InitializeAction {
+        return InitializeAction.SKIP_INITIAL_REFRESH
+    }
+
     override suspend fun load(
         loadType: LoadType,
         state: PagingState<Int, User>
     ): MediatorResult {
 
         return try {
-            val loadKey = when(loadType) {
-                LoadType.REFRESH -> 1
-                LoadType.PREPEND -> return MediatorResult.Success(
-                    endOfPaginationReached = true
-                )
-                LoadType.APPEND -> {
-                    val lastItem = state.lastItemOrNull()
-                    if(lastItem == null) {
-                        1
-                    } else {
-                        (lastItem.userId / state.config.pageSize) + 1
-                    }
-                }
+            if (loadType == LoadType.PREPEND) {
+                return MediatorResult.Success(endOfPaginationReached = true)
             }
 
-            val users = usersRepository.getUsers()
+            val userResponse = usersRepository.getUsers(state.config.pageSize)
 
+            if (!userResponse.isSuccessful || userResponse.body() == null) {
+                return MediatorResult.Error(HttpException(userResponse))
+            }
 
-            usersDBRepository.insert(users.body()!!.results)
+            if (loadType == LoadType.REFRESH) {
+                usersDBRepository.clear()
+            }
 
+            usersDBRepository.insert(userResponse.body()!!.results)
 
             MediatorResult.Success(
-                endOfPaginationReached = users.body()?.results!!.isEmpty()
+                endOfPaginationReached = false
             )
         } catch(e: IOException) {
             MediatorResult.Error(e)

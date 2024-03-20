@@ -13,4 +13,8 @@ class UsersDBRepositoryIMPL @Inject constructor(private val dao: UsersDao): User
     override fun getUsers(): PagingSource<Int, User> {
         return dao.getUsers()
     }
+
+    override suspend fun clear() {
+        dao.clear()
+    }
 }

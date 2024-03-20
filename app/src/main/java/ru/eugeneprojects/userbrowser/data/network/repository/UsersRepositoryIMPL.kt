@@ -4,5 +4,5 @@ import ru.eugeneprojects.userbrowser.api.UserAPI
 import javax.inject.Inject
 
 class UsersRepositoryIMPL @Inject constructor(private val api: UserAPI) : UsersRepository {
-    override suspend fun getUsers() = api.getUsers()
+    override suspend fun getUsers(pageSize: Int) = api.getUsers(pageSize)
 }

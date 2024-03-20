@@ -9,8 +9,12 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import ru.eugeneprojects.userbrowser.data.models.User
 import ru.eugeneprojects.userbrowser.data.network.connection.ConnectivityRepository
@@ -30,11 +34,10 @@ class UsersSharedViewModel @Inject constructor(
     val isOnline = connectivityRepository.isConnected.asLiveData()
 
     @OptIn(ExperimentalPagingApi::class)
-    val users: StateFlow<PagingData<User>> = Pager(
+    val users: Flow<PagingData<User>> = Pager(
         config = Constants.PAGING_CONFIG,
         remoteMediator = UserRemoteMediator(usersRepository, usersDBRepository),
         pagingSourceFactory = { usersDBRepository.getUsers() }
     ).flow
         .cachedIn(viewModelScope)
-        .stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
 }

@@ -10,7 +10,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "table_user")
 data class User(
     @PrimaryKey(autoGenerate = true)
-    val userId: Int = 0,
+    val userId: Int? = null,
     val cell: String,
     @Embedded(prefix = "dob_")
     val dob: Dob,

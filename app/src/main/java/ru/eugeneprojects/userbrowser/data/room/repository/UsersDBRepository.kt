@@ -7,6 +7,7 @@ interface UsersDBRepository {
 
     suspend fun insert(users: List<User>)
 
-    //TODO возможно тут просто лист
     fun getUsers(): PagingSource<Int, User>
+
+    suspend fun clear()
 }

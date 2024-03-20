@@ -2,6 +2,7 @@ package ru.eugeneprojects.userbrowser.data.room.db
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.Companion.REPLACE
 import androidx.room.Query
@@ -12,6 +13,9 @@ interface UsersDao {
     @Insert(onConflict = REPLACE)
     suspend fun saveUsers(users: List<User>)
 
-    @Query("SELECT * FROM table_user")
+    @Query("SELECT * FROM table_user ORDER BY userId")
     fun getUsers(): PagingSource<Int, User>
+
+    @Query("DELETE FROM table_user")
+    suspend fun clear()
 }

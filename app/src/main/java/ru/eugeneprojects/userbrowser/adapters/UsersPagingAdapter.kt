@@ -38,7 +38,7 @@ class UsersPagingAdapter :
 
         fun bind(user: User, onClickListener: ((User) -> Unit)? = null) {
 
-            val name = user.name.first + " " + user.name.last
+            val name = user.userId.toString() + " " + user.name.first + " " + user.name.last
             val address = user.location.street.number.toString() + " " + user.location.street.name +
                     user.location.city + " " + user.location.state + " " + user.location.country
 

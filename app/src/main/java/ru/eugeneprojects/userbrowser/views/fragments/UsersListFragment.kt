@@ -53,6 +53,8 @@ class UsersListFragment : Fragment(){
                 Toast.makeText(activity, resources.getString(R.string.network_error_message), Toast.LENGTH_SHORT).show()
             }
         }
+
+        initSwipeToRefresh()
     }
 
     override fun onDestroy() {
@@ -101,6 +103,16 @@ class UsersListFragment : Fragment(){
                 R.id.action_usersListFragment_to_userFragment,
                 bundle
             )
+        }
+    }
+
+    private fun initSwipeToRefresh() {
+
+        binding?.swipeRefresh?.setOnRefreshListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                usersPagingAdapter.refresh()
+                binding?.swipeRefresh?.isRefreshing = false
+            }
         }
     }
 }

@@ -5,5 +5,5 @@ import ru.eugeneprojects.userbrowser.data.models.UsersResponse
 
 interface UsersRepository {
 
-    suspend fun getUsers(): Response<UsersResponse>
+    suspend fun getUsers(pageSize: Int): Response<UsersResponse>
 }
