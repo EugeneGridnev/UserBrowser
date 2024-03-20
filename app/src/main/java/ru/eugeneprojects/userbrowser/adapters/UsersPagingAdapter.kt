@@ -11,13 +11,13 @@ import ru.eugeneprojects.userbrowser.data.models.User
 import ru.eugeneprojects.userbrowser.databinding.ItemUserLayoutBinding
 
 class UsersPagingAdapter :
-    PagingDataAdapter<User, UsersPagingAdapter.ProductViewHolder>(UserDiffCallBack()) {
+    PagingDataAdapter<User, UsersPagingAdapter.UserViewHolder>(UserDiffCallBack()) {
 
     private var onItemClickListener: ((User) -> Unit)? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
 
-        return ProductViewHolder(
+        return UserViewHolder(
             ItemUserLayoutBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -26,14 +26,14 @@ class UsersPagingAdapter :
         )
     }
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
-        val product = getItem(position) ?: return
-        holder.bind(product, onItemClickListener)
+        val user = getItem(position) ?: return
+        holder.bind(user, onItemClickListener)
     }
 
 
-    class ProductViewHolder(private val binding: ItemUserLayoutBinding) :
+    class UserViewHolder(private val binding: ItemUserLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: User, onClickListener: ((User) -> Unit)? = null) {
