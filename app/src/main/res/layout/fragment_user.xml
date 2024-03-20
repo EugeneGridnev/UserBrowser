@@ -13,7 +13,7 @@
             android:id="@+id/imageViewUserImage"
             android:layout_width="@dimen/user_image_view_height"
             android:layout_height="@dimen/user_image_view_height"
-            android:layout_marginTop="@dimen/user_image_margin"
+            android:layout_marginVertical="@dimen/user_image_margin"
             app:shapeAppearanceOverlay="@style/roundedImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,12 +41,11 @@
             android:layout_height="wrap_content"
             android:text="@string/user_age"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserDOBTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserAge"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserAge"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserAge" />
 
         <TextView
             style="@style/userFragmentText"
@@ -54,10 +53,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserAgeTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserDOB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserAgeTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserAgeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserName"
             tools:text="300" />
 
         <TextView
@@ -68,10 +67,10 @@
             android:text="@string/user_dob"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserRegistrationDateTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserDOB"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserDOB"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserAge" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserDOB" />
 
         <TextView
             style="@style/userFragmentText"
@@ -79,10 +78,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserDOBTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserAge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserDOBTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserDOBTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserRegistrationDate"
             tools:text="1992-03-08" />
 
         <TextView
@@ -93,10 +92,10 @@
             android:text="@string/user_registration_date"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserEmailTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserRegistrationDate"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserRegistrationDate"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserDOB" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserRegistrationDate" />
 
         <TextView
             style="@style/userFragmentText"
@@ -104,10 +103,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserRegistrationDateTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserRegistrationDateTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserRegistrationDateTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserDOB"
             tools:text="2007-07-09" />
 
         <TextView
@@ -118,10 +117,10 @@
             android:text="@string/user_email"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserUserNameTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserEmail"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserEmail"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserRegistrationDate" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserEmail" />
 
         <TextView
             style="@style/userFragmentText"
@@ -129,10 +128,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserEmailTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserUserName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserEmailTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserEmailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserRegistrationDate"
             tools:text="pu-pu-pu@mail.ru" />
 
         <TextView
@@ -143,10 +142,10 @@
             android:text="@string/user_user_name"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserPasswordTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserUserName"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserUserName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserEmail" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserUserName" />
 
         <TextView
             style="@style/userFragmentText"
@@ -154,10 +153,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserUserNameTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserUserPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserUserNameTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserUserNameTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserEmail"
             tools:text="NAgibatorsha228322" />
 
         <TextView
@@ -168,10 +167,10 @@
             android:text="@string/user_password"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserTelephoneNumberTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserUserPassword"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserUserPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserUserNameTitle" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserUserPassword" />
 
         <TextView
             style="@style/userFragmentText"
@@ -179,10 +178,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserPasswordTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserTelephoneNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserPasswordTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserPasswordTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserUserName"
             tools:text="ГОд твоего рождения)" />
 
         <TextView
@@ -193,10 +192,10 @@
             android:text="@string/user_phone_number"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserCellNumberTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserTelephoneNumber"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserTelephoneNumber"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserPasswordTitle" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserTelephoneNumber" />
 
         <TextView
             style="@style/userFragmentText"
@@ -204,10 +203,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserTelephoneNumberTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserCellNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserTelephoneNumberTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserTelephoneNumberTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserUserPassword"
             tools:text="(272) 790-0888" />
 
         <TextView
@@ -218,10 +217,10 @@
             android:text="@string/user_cell_number"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserNationalityTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserCellNumber"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserCellNumber"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserTelephoneNumber" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserCellNumber" />
 
         <TextView
             style="@style/userFragmentText"
@@ -229,10 +228,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserCellNumberTitle"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserNationality"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserCellNumberTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserCellNumberTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserTelephoneNumber"
             tools:text="(489) 330-2385" />
 
         <TextView
@@ -243,10 +242,10 @@
             android:text="@string/user_nationality"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserGenderTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserNationality"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserNationality"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserCellNumber" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserNationality" />
 
         <TextView
             style="@style/userFragmentText"
@@ -256,8 +255,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserNationalityTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserNationalityTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserNationalityTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserCellNumber"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserGender"
             tools:text="Казах" />
 
         <TextView
@@ -268,10 +267,10 @@
             android:text="@string/user_gender"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserIDTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserGender"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserGender"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserNationality" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserGender" />
 
         <TextView
             style="@style/userFragmentText"
@@ -281,8 +280,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserGenderTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserGenderTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserGenderTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserNationality"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserID"
             tools:text="ламинат" />
 
         <TextView
@@ -293,10 +292,10 @@
             android:text="@string/user_id"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserAddressTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserID"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserID"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserGender" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserID" />
 
         <TextView
             style="@style/userFragmentText"
@@ -306,8 +305,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserIDTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserIDTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserIDTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserGender"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserAddress"
             tools:text="SSN 405-88-3636" />
 
         <TextView
@@ -318,10 +317,10 @@
             android:text="@string/user_address"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserCoordinatesTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserAddress"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserAddress"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserID" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserAddress" />
 
         <TextView
             style="@style/userFragmentText"
@@ -331,8 +330,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserAddressTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserAddressTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserAddressTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserID"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserCoordinates"
             tools:text="8929 Valwood Pkwy Billings Michigan United States" />
 
         <TextView
@@ -343,10 +342,10 @@
             android:text="@string/user_coordinates"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toTopOf="@+id/textViewUserTimeZoneTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserCoordinates"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserCoordinates"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserAddress" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserCoordinates" />
 
         <TextView
             style="@style/userFragmentText"
@@ -356,8 +355,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserCoordinatesTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserCoordinatesTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserCoordinatesTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserAddress"
+            app:layout_constraintBottom_toTopOf="@+id/textViewUserTimeZone"
             tools:text="-69.8246 134.8719" />
 
         <TextView
@@ -368,10 +367,10 @@
             android:text="@string/user_time_zone"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUserTimeZone"
             app:layout_constraintEnd_toStartOf="@+id/textViewUserTimeZone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserCoordinates" />
+            app:layout_constraintTop_toTopOf="@+id/textViewUserTimeZone" />
 
         <TextView
             style="@style/userFragmentText"
@@ -381,8 +380,8 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewUserTimeZoneTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewUserTimeZoneTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewUserTimeZoneTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserCoordinates"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="+9:30 Adelaide, Darwin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
